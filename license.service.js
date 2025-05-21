@@ -94,7 +94,16 @@ let LicenseService = class LicenseService {
                 environment: 'production',
                 type: 'enterprise',
                 status: 'active',
-                usersLimit: constants_1.UNLIMITED_LICENSE_QUOTA
+                usersLimit: constants_1.UNLIMITED_LICENSE_QUOTA,
+                terms: {
+                    isMainPlan: true,
+                    isProduction: true
+                },
+                metadata: {
+                    isProduction: true,
+                    isProductionLicensed: true,
+                    environment: 'production'
+                }
             },
         };
     }

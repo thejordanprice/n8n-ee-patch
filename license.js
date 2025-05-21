@@ -320,7 +320,16 @@ let License = class License {
         return {
             productId: 'enterprise',
             name: 'Enterprise',
-            features: this.getCurrentEntitlements().features
+            features: this.getCurrentEntitlements().features,
+            isProduction: true,
+            isProductionLicensed: true,
+            environment: 'production',
+            type: 'enterprise',
+            status: 'active',
+            terms: {
+                isMainPlan: true,
+                isProduction: true
+            }
         };
     }
     getConsumerId() {
