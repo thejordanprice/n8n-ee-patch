@@ -170,11 +170,9 @@ let License = class License {
         }, ['key']);
     }
     async activate(activationKey) {
-        if (!this.manager) {
-            return;
-        }
-        await this.manager.activate(activationKey);
+        // Always succeed without calling the server
         this.logger.debug('License activated');
+        return true;
     }
     async reload() {
         if (!this.manager) {

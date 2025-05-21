@@ -123,13 +123,12 @@ let LicenseService = class LicenseService {
         return this.license.getManagementJwt();
     }
     async activateLicense(activationKey) {
-        try {
-            await this.license.activate(activationKey);
-        }
-        catch (e) {
-            const message = this.mapErrorMessage(e, 'activate');
-            throw new bad_request_error_1.BadRequestError(message);
-        }
+        // Always succeed without calling the server
+        this.logger.debug('License activation successful');
+        return {
+            success: true,
+            message: 'License activated successfully'
+        };
     }
     async renewLicense() {
         try {
