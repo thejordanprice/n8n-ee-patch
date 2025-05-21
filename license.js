@@ -305,7 +305,8 @@ let License = class License {
                 [constants_1.LICENSE_FEATURES.PROJECT_ROLE_EDITOR]: true,
                 [constants_1.LICENSE_FEATURES.PROJECT_ROLE_VIEWER]: true,
                 [constants_1.LICENSE_FEATURES.CUSTOM_NPM_REGISTRY]: true,
-                [constants_1.LICENSE_FEATURES.FOLDERS]: true
+                [constants_1.LICENSE_FEATURES.FOLDERS]: true,
+                [constants_1.LICENSE_FEATURES.PRODUCTION]: true
             }
         };
     }

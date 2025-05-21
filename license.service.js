@@ -83,7 +83,11 @@ let LicenseService = class LicenseService {
                 planName: 'Enterprise',
                 isProductionLicensed: true,
                 isEnterprise: true,
-                isProduction: true
+                isProduction: true,
+                production: true,
+                environment: 'production',
+                type: 'enterprise',
+                status: 'active'
             },
         };
     }
