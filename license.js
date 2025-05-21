@@ -327,7 +327,7 @@ let License = class License {
         return this.manager?.getConsumerId() ?? 'unknown';
     }
     getUsersLimit() {
-        return 999999;
+        return constants_1.UNLIMITED_LICENSE_QUOTA;
     }
     getTriggerLimit() {
         return 999999;

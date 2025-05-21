@@ -52,6 +52,7 @@ const bad_request_error_1 = require("../errors/response-errors/bad-request.error
 const event_service_1 = require("../events/event.service");
 const license_1 = require("../license");
 const url_service_1 = require("../services/url.service");
+const constants_1 = require("../constants");
 exports.LicenseErrors = {
     SCHEMA_VALIDATION: 'Activation key is in the wrong format',
     RESERVATION_EXHAUSTED: 'Activation key has been used too many times',
@@ -77,6 +78,11 @@ let LicenseService = class LicenseService {
                     limit: 999999, // Set a very high limit for enterprise
                     warningThreshold: 0.8,
                 },
+                users: {
+                    value: 0,
+                    limit: constants_1.UNLIMITED_LICENSE_QUOTA,
+                    warningThreshold: 0.8,
+                }
             },
             license: {
                 planId: 'enterprise',
@@ -87,7 +93,8 @@ let LicenseService = class LicenseService {
                 production: true,
                 environment: 'production',
                 type: 'enterprise',
-                status: 'active'
+                status: 'active',
+                usersLimit: constants_1.UNLIMITED_LICENSE_QUOTA
             },
         };
     }
